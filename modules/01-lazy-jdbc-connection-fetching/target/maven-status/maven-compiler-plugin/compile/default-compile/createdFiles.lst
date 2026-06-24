@@ -1,2 +1,9 @@
-dev/zengcode/features/lazyjdbc/LazyjdbcApplication.class
+dev/zengcode/features/lazyjdbc/ConnectionPoolInspector.class
+dev/zengcode/features/lazyjdbc/DemoResponse.class
 dev/zengcode/features/lazyjdbc/FeatureController.class
+dev/zengcode/features/lazyjdbc/LazyDataSourceConfig.class
+dev/zengcode/features/lazyjdbc/LazyjdbcApplication.class
+dev/zengcode/features/lazyjdbc/Product.class
+dev/zengcode/features/lazyjdbc/TimelineStep.class
+dev/zengcode/features/lazyjdbc/LazyJdbcService.class
+dev/zengcode/features/lazyjdbc/ProductRepository.class

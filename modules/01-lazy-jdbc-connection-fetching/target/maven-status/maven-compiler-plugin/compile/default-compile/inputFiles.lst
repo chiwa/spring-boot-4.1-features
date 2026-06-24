@@ -1,2 +1,9 @@
+/home/chiwa/projects/knowledge-sharing/spring-boot-4.1-features/modules/01-lazy-jdbc-connection-fetching/src/main/java/dev/zengcode/features/lazyjdbc/ConnectionPoolInspector.java
+/home/chiwa/projects/knowledge-sharing/spring-boot-4.1-features/modules/01-lazy-jdbc-connection-fetching/src/main/java/dev/zengcode/features/lazyjdbc/DemoResponse.java
 /home/chiwa/projects/knowledge-sharing/spring-boot-4.1-features/modules/01-lazy-jdbc-connection-fetching/src/main/java/dev/zengcode/features/lazyjdbc/FeatureController.java
+/home/chiwa/projects/knowledge-sharing/spring-boot-4.1-features/modules/01-lazy-jdbc-connection-fetching/src/main/java/dev/zengcode/features/lazyjdbc/LazyDataSourceConfig.java
+/home/chiwa/projects/knowledge-sharing/spring-boot-4.1-features/modules/01-lazy-jdbc-connection-fetching/src/main/java/dev/zengcode/features/lazyjdbc/LazyJdbcService.java
 /home/chiwa/projects/knowledge-sharing/spring-boot-4.1-features/modules/01-lazy-jdbc-connection-fetching/src/main/java/dev/zengcode/features/lazyjdbc/LazyjdbcApplication.java
+/home/chiwa/projects/knowledge-sharing/spring-boot-4.1-features/modules/01-lazy-jdbc-connection-fetching/src/main/java/dev/zengcode/features/lazyjdbc/Product.java
+/home/chiwa/projects/knowledge-sharing/spring-boot-4.1-features/modules/01-lazy-jdbc-connection-fetching/src/main/java/dev/zengcode/features/lazyjdbc/ProductRepository.java
+/home/chiwa/projects/knowledge-sharing/spring-boot-4.1-features/modules/01-lazy-jdbc-connection-fetching/src/main/java/dev/zengcode/features/lazyjdbc/TimelineStep.java

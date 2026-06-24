@@ -5,10 +5,24 @@
   },
   "item": [
     {
-      "name": "Lazy JDBC Connection Fetching",
+      "name": "Lazy JDBC: No DB",
       "request": {
         "method": "GET",
-        "url": "http://localhost:8081/feature"
+        "url": "http://localhost:8081/lazy-jdbc/no-db"
+      }
+    },
+    {
+      "name": "Lazy JDBC: External then DB",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8081/lazy-jdbc/external-then-db"
+      }
+    },
+    {
+      "name": "Lazy JDBC: DB First",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8081/lazy-jdbc/db-first"
       }
     },
     {

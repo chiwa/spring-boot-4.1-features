@@ -6,14 +6,20 @@ spring:
     name: 01-lazy-jdbc-connection-fetching
 
   datasource:
-    url: jdbc:h2:mem:lazyjdbc
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
+    url: jdbc:postgresql://localhost:5432/demo
+    username: demo
+    password: demo
+    driver-class-name: org.postgresql.Driver
+    # Spring Boot 4.1 supports connection-fetch: lazy natively
+    # In older versions, we can use a custom LazyDataSourceConfig
     connection-fetch: lazy
+    hikari:
+      maximum-pool-size: 2
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
+
+
 
 management:
   endpoints:
