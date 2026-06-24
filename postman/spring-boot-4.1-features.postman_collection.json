@@ -1,0 +1,64 @@
+{
+  "info": {
+    "name": "Spring Boot 4.1 Features",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Lazy JDBC Connection Fetching",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8081/feature"
+      }
+    },
+    {
+      "name": "Spring gRPC Support",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8082/feature"
+      }
+    },
+    {
+      "name": "HTTP Client SSRF Mitigation",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8083/feature"
+      }
+    },
+    {
+      "name": "OpenTelemetry & Observability",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8084/feature"
+      }
+    },
+    {
+      "name": "Redis Listener Auto Configuration",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8085/feature"
+      }
+    },
+    {
+      "name": "Jackson Configuration Improvements",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8086/feature"
+      }
+    },
+    {
+      "name": "Actuator Info Improvements",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8087/feature"
+      }
+    },
+    {
+      "name": "Async Context Propagation",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8088/feature"
+      }
+    }
+  ]
+}

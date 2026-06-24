@@ -1,0 +1,19 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: 06-jackson-configuration
+
+  jackson:
+    datatype:
+      date-time:
+        write-dates-as-timestamps: false
+      enum:
+        read-unknown-enum-values-as-null: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics

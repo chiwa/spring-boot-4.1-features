@@ -1,0 +1,22 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: 01-lazy-jdbc-connection-fetching
+
+  datasource:
+    url: jdbc:h2:mem:lazyjdbc
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+    connection-fetch: lazy
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics

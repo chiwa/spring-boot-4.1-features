@@ -1,0 +1,12 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: 03-http-client-ssrf-mitigation
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics

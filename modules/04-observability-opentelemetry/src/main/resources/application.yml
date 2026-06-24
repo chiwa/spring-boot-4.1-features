@@ -1,0 +1,16 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: 04-observability-opentelemetry
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics
+  otlp:
+    tracing:
+      endpoint: http://localhost:4318/v1/traces
+

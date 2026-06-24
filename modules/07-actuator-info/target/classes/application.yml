@@ -1,0 +1,20 @@
+server:
+  port: 8087
+
+spring:
+  application:
+    name: 07-actuator-info
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  info:
+    env:
+      enabled: true
+info:
+  app:
+    name: actuator-info-demo
+    description: Spring Boot 4.1 Actuator info demo
+
