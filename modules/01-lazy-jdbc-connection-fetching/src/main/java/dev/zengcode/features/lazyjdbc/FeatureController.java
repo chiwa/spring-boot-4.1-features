@@ -18,9 +18,19 @@ public class FeatureController {
         this.poolInspector = poolInspector;
     }
 
+    private void delayForConnectionRelease() {
+        try {
+            // Tiny delay to ensure connection is fully returned to the pool after transaction boundary
+            Thread.sleep(50);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
     @GetMapping("/no-db")
     public DemoResponse noDb() {
         List<TimelineStep> timeline = lazyJdbcService.noDb();
+        delayForConnectionRelease();
         timeline.add(poolInspector.captureStep("transaction-ended"));
         
         return new DemoResponse(
@@ -34,6 +44,7 @@ public class FeatureController {
     @GetMapping("/external-then-db")
     public DemoResponse externalThenDb() {
         List<TimelineStep> timeline = lazyJdbcService.externalThenDb();
+        delayForConnectionRelease();
         timeline.add(poolInspector.captureStep("transaction-ended"));
         
         return new DemoResponse(
@@ -47,6 +58,7 @@ public class FeatureController {
     @GetMapping("/db-first")
     public DemoResponse dbFirst() {
         List<TimelineStep> timeline = lazyJdbcService.dbFirst();
+        delayForConnectionRelease();
         timeline.add(poolInspector.captureStep("transaction-ended"));
         
         return new DemoResponse(

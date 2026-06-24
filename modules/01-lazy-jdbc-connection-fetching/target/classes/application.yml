@@ -12,10 +12,11 @@ spring:
     driver-class-name: org.postgresql.Driver
     # Spring Boot 4.1 supports connection-fetch: lazy natively
     # In older versions, we can use a custom LazyDataSourceConfig
-    connection-fetch: lazy
+    connection-fetch: eagle #lazy, eagle
     hikari:
       maximum-pool-size: 2
   jpa:
+    open-in-view: false
     hibernate:
       ddl-auto: update
 

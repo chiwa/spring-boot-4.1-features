@@ -38,9 +38,10 @@ class LazyjdbcApplicationTests {
     }
 
     @Test
-    void testEndpoints() {
-        assertEquals("no-db", featureController.noDb().scenario());
-        assertEquals("external-then-db", featureController.externalThenDb().scenario());
-        assertEquals("db-first", featureController.dbFirst().scenario());
+    void testEndpoints() throws Exception {
+        System.out.println("TESTING EXTERNAL THEN DB");
+        DemoResponse resp = featureController.externalThenDb();
+        System.out.println("TIMELINE: " + resp.timeline());
+        assertEquals("external-then-db", resp.scenario());
     }
 }

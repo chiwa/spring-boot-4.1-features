@@ -2,7 +2,10 @@ package dev.zengcode.features.lazyjdbc;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +17,7 @@ import javax.sql.DataSource;
  * In a native Spring Boot 4.1 app, this is done automatically by the framework.
  */
 @Component
+@ConditionalOnProperty(name = "spring.datasource.connection-fetch", havingValue = "lazy", matchIfMissing = true)
 public class LazyDataSourceConfig implements BeanPostProcessor {
 
     @Override

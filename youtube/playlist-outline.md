@@ -2,6 +2,9 @@
 
 1. Repository Overview and ZEPS Standard
 2. Lazy JDBC Connection Fetching
+   - Eager Fetching Problem (Connection Pool Exhaustion)
+   - Spring Boot 4.1 solution: `spring.datasource.connection-fetch: lazy`
+   - *Deep Architectural Insight*: Why JPA/Hibernate users are already safe, and why this feature is a game-changer for Spring JDBC, MyBatis, and jOOQ users.
 3. Spring gRPC Support
 4. HTTP Client SSRF Mitigation
 5. Observability and OpenTelemetry
