@@ -3,7 +3,9 @@
 ## Objective
 Demonstrate the benefits of Lazy JDBC Connection Fetching in Spring Boot 4.1.
 
-> **Note:** To simulate the upcoming native Spring Boot 4.1 behavior (`spring.datasource.connection-fetch: lazy`), this module employs a custom `LazyDataSourceConfig` that wraps the Hikari `DataSource` in a `LazyConnectionDataSourceProxy`. This perfectly mimics how the framework will delay acquiring physical connections until actual SQL execution.
+> [!WARNING]
+> **Important Note:**
+> This repository uses `LazyConnectionDataSourceProxy` to **simulate** the expected Lazy JDBC Connection Fetching behavior. The exact native Spring Boot 4.1 configuration should be verified against the official Spring Boot 4.1 documentation when upgrading.
 
 ## Purpose & Expectation
 In standard Spring applications, when a method is annotated with `@Transactional`, the underlying transaction manager immediately fetches a JDBC connection from the connection pool (like HikariCP), even before any database queries are actually executed.
@@ -14,9 +16,11 @@ If a transaction contains a slow operation *before* the first database call (e.g
 
 > [!IMPORTANT]
 > **Deep Architectural Insight:** 
-> If your project exclusively uses **Spring Data JPA** (Hibernate), you won't see a difference when toggling this feature! That's because modern Hibernate already implements perfectly optimized lazy connection fetching natively. 
+> If your project mainly uses **Spring Data JPA** with Hibernate, you may not see a big difference in many common scenarios when toggling lazy fetching. That's because Hibernate can delay physical connection acquisition in many common JPA flows natively!
 > 
-> The `spring.datasource.connection-fetch: lazy` feature in Spring Boot 4.1 is a game-changer primarily for applications using **Spring JDBC (JdbcTemplate), MyBatis, or jOOQ**. These frameworks traditionally suffer from Eager Fetching when wrapping methods in `@Transactional`. Spring Boot 4.1 now brings Hibernate's lazy magic to the rest of the ecosystem!
+> However, the actual behavior depends on Hibernate connection handling mode, transaction manager, provider configuration, and how the application accesses the database.
+> 
+> The `spring.datasource.connection-fetch: lazy` feature expected in Spring Boot 4.1 aims to make this easier primarily for applications using **Spring JDBC (JdbcTemplate), MyBatis, or jOOQ**. These frameworks traditionally suffer from Eager Fetching when wrapping methods in `@Transactional`. This brings the benefits often naturally enjoyed by JPA flows down to the rest of the ecosystem!
 ## How to Run
 1. Ensure the PostgreSQL database is running via `docker compose`:
    ```bash
@@ -52,4 +56,4 @@ If a transaction contains a slow operation *before* the first database call (e.g
 ```
 
 > [!NOTE]
-> Since this demo uses Spring Data JPA, `activeConnections` will always efficiently stay at `0` during the external call, regardless of the `connection-fetch` configuration, proving how smart Hibernate is under the hood!
+> Since this demo uses Spring Data JPA, `activeConnections` will usually efficiently stay at `0` during the external call, regardless of the `connection-fetch` configuration, proving how Hibernate handles logical connections under the hood!

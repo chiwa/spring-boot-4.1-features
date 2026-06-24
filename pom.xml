@@ -22,12 +22,5 @@
 
     <modules>
         <module>modules/01-lazy-jdbc-connection-fetching</module>
-        <module>modules/02-spring-grpc</module>
-        <module>modules/03-http-client-ssrf-mitigation</module>
-        <module>modules/04-observability-opentelemetry</module>
-        <module>modules/05-redis-listener</module>
-        <module>modules/06-jackson-configuration</module>
-        <module>modules/07-actuator-info</module>
-        <module>modules/08-async-context-propagation</module>
     </modules>
 </project>
